@@ -1,0 +1,12 @@
+# Direct Python dependencies used by the notebook
+pandas
+numpy
+matplotlib
+seaborn
+scipy
+scikit-learn
+statsmodels
+geopandas
+plotly
+mapclassify
+jupyter
