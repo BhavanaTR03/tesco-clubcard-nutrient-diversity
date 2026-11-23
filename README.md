@@ -2,7 +2,7 @@
 
 This project combines grocery purchasing data, household income estimates and geographical information to investigate nutrient diversity across London.
 
-## 1. Tesco Grocery 1.0
+## 1. Tesco Grocery 1.0 Dataset
 
 - Publisher: Original dataset publisher
 - Source: https://figshare.com/collections/Tesco_Grocery_1_0/4769354
@@ -13,20 +13,22 @@ This project combines grocery purchasing data, household income estimates and ge
 ## 2. Household Income Estimates
 
 - Local filename: `Net_income_bhc_equivalised.csv`
-- Likely source: ONS Small Area Income Estimates.
-- Geographical coverage: England and Wales.
+- Likely publisher: Office for National Statistics (ONS).
+- Likely dataset: Income estimates for small areas, England and Wales.
+- Likely reference period: Financial year ending 2014 (2013/14).
 - Geographical level: 2011 Middle Layer Super Output Areas (MSOAs).
-- Records: 7,201.
-- Main measure: Net weekly income (£).
-- Additional fields: Upper and lower confidence limits and confidence interval.
-- Exact publication year: Pending verification.
-- Exact income definition: Pending verification.
-- Licence and redistribution conditions: Pending verification.
+- Number of MSOAs: 7,201.
+- Income measure: Mean net weekly household income, equivalised before housing costs (BHC), subject to confirmation against the original download.
+- Additional fields: Upper confidence limit, lower confidence limit and confidence interval.
+- Potential licence: Open Government Licence v3.0, subject to confirmation of the exact source file.
+
+Official source:
+https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/bulletins/smallareamodelbasedincomeestimates/financialyearending2014
+
+Technical report:
+https://www.ons.gov.uk/file?uri=%2Femploymentandlabourmarket%2Fpeopleinwork%2Fearningsandworkinghours%2Fmethodologies%2Fsmallareaincomeestimatesmodelbasedestimatesofthemeanhouseholdweeklyincomeformiddlelayersuperoutputareas201314technicalreport%2Fhouseholdincometechnicalreport.pdf
 
 The original CSV is not included in this repository.
-
-Potential source documentation:
-https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/methodologies/smallareamodelbasedincomeestimatesenglandandwalesfinancialyearending2016
 
 ## 3. Geographical Boundary Data
 
@@ -35,10 +37,10 @@ https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances
 - Boundary vintage: To be verified.
 - Licence: To be verified.
 
-## Data availability
+## Data Availability
 
-The original datasets are not redistributed through this repository.
+Original datasets are not redistributed through this repository.
 
-Users should obtain data from the original publishers and review the applicable licensing and attribution conditions before reuse.
+Users should obtain the datasets from their respective original publishers and review the applicable licensing and attribution conditions before reuse.
 
-No confidential, identifiable or restricted household-level information should be published.
+No confidential, identifiable or restricted household-level purchasing data is included.
