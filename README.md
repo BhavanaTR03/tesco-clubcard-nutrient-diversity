@@ -1,46 +1,53 @@
-# Data Sources and Documentation
+# Tesco Clubcard: Nutrient Diversity in London
 
-This project combines grocery purchasing data, household income estimates and geographical information to investigate nutrient diversity across London.
+An MSc Data Science project investigating geographical differences in dietary purchasing diversity across London using Tesco grocery purchasing data, statistical analysis and geospatial techniques.
 
-## 1. Tesco Grocery 1.0 Dataset
+## Project Overview
 
-- Publisher: Original dataset publisher
-- Source: https://figshare.com/collections/Tesco_Grocery_1_0/4769354
-- Research publication: Aiello et al. (2020), Scientific Data.
-- Usage: Grocery purchasing and nutrient diversity analysis.
-- Original dataset: Not redistributed in this repository.
+This project examines nutrient diversity in grocery purchasing patterns across London and investigates how geographical and socioeconomic factors relate to differences in purchasing diversity.
 
-## 2. Household Income Estimates
+The analysis uses Tesco Grocery 1.0 purchasing data alongside household income estimates and geographical information.
 
-- Local filename: `Net_income_bhc_equivalised.csv`
-- Likely publisher: Office for National Statistics (ONS).
-- Likely dataset: Income estimates for small areas, England and Wales.
-- Likely reference period: Financial year ending 2014 (2013/14).
-- Geographical level: 2011 Middle Layer Super Output Areas (MSOAs).
-- Number of MSOAs: 7,201.
-- Income measure: Mean net weekly household income, equivalised before housing costs (BHC), subject to confirmation against the original download.
-- Additional fields: Upper confidence limit, lower confidence limit and confidence interval.
-- Potential licence: Open Government Licence v3.0, subject to confirmation of the exact source file.
+## Research Questions
 
-Official source:
-https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/bulletins/smallareamodelbasedincomeestimates/financialyearending2014
+1. How does nutrient diversity vary across London?
+2. Which geographical areas demonstrate differences in nutrient diversity?
+3. What relationships exist between household income and nutrient diversity?
 
-Technical report:
-https://www.ons.gov.uk/file?uri=%2Femploymentandlabourmarket%2Fpeopleinwork%2Fearningsandworkinghours%2Fmethodologies%2Fsmallareaincomeestimatesmodelbasedestimatesofthemeanhouseholdweeklyincomeformiddlelayersuperoutputareas201314technicalreport%2Fhouseholdincometechnicalreport.pdf
+## Methodology
 
-The original CSV is not included in this repository.
+- **Data processing:** Cleaning, transformation and aggregation of grocery purchasing data.
+- **Nutrient diversity:** Shannon Entropy to measure diversity across nutrient categories.
+- **Statistical analysis:** Descriptive statistics, correlation and OLS regression.
+- **Geospatial analysis:** MSOA-level geographical comparisons and mapping.
+- **Visualisation:** Power BI dashboards and statistical plots.
 
-## 3. Geographical Boundary Data
+## Tools and Technologies
 
-- Publisher: To be verified.
-- Geography: MSOA.
-- Boundary vintage: To be verified.
-- Licence: To be verified.
+Python | Pandas | NumPy | Scikit-learn | Matplotlib | Seaborn | GeoPandas | Power BI | Jupyter Notebook
 
-## Data Availability
+## Repository Structure
 
-Original datasets are not redistributed through this repository.
+- `data/` – Dataset sources, documentation and access instructions.
+- `notebooks/` – Jupyter notebooks containing the analysis.
+- `visualisations/` – Project charts, maps and dashboard screenshots.
+- `reports/` – Project documentation and summaries.
+- `requirements.txt` – Python dependencies.
 
-Users should obtain the datasets from their respective original publishers and review the applicable licensing and attribution conditions before reuse.
+## Data Sources
 
-No confidential, identifiable or restricted household-level purchasing data is included.
+- [Tesco Grocery 1.0 – Figshare](https://figshare.com/collections/Tesco_Grocery_1_0/4769354)
+- [ONS Small Area Income Estimates](https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth)
+
+See [`data/README.md`](data/README.md) for dataset documentation and access information.
+
+Original datasets are not redistributed in this repository.
+
+## Reproducibility
+
+Instructions for installing dependencies, accessing the required datasets and running the analysis will be provided alongside the notebook.
+
+## Academic Context
+
+Developed as part of the MSc Data Science programme at the University of Bath.
+
