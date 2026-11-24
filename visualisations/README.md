@@ -1,11 +1,17 @@
+## Project Visualisations
 
-# Project Visualisations
+### 1. Geographical distribution of nutrient diversity
 
-This folder contains selected visualisations from the Tesco Clubcard Nutrient Diversity project.
+![London nutrient diversity map](visualisations/nutrient_diversity_map.png)
 
-The visualisations illustrate:
-- Geographical patterns in nutrient diversity across London.
-- Relationships between macronutrient diversity and demographic characteristics.
-- Differences between basket diversity and nutrient diversity across income levels.
+### 2. Macronutrient diversity analysis
 
-All visualisations are based on the analysis in the project's Jupyter notebook.
+![Protein diversity heatmap](visualisations/heatmap_protein.png)
+
+![Carbohydrate diversity heatmap](visualisations/heatmap_carbohydrate.png)
+
+![Sugar diversity heatmap](visualisations/heatmap_sugar.png)
+
+### 3. Income and nutrient diversity divergence
+
+![Income and diversity divergence scatterplot](visualisations/income_diversity_scatterplot.png)
