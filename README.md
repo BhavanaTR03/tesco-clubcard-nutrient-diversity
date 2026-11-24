@@ -1,12 +1,12 @@
 # Tesco Clubcard: Nutrient Diversity in London
 
-An MSc Data Science group coursework project investigating geographical inequalities in nutrient diversity across London using Tesco Grocery 1.0 purchasing data, statistical modelling and geospatial analysis.
+An MSc Data Science group coursework project investigating geographical inequalities in nutrient diversity across London using Tesco Grocery 1.0 purchasing data, statistical analysis and geospatial techniques.
 
 ## Project Overview
 
-This project examines whether the variety of foods purchased by households reflects nutritional variety, and how purchasing patterns differ across London.
+This project investigates whether the variety of foods purchased reflects nutritional diversity and how purchasing patterns differ across London.
 
-Using annual Tesco Clubcard purchasing data from 2015, aggregated at Middle Layer Super Output Area (MSOA) level, the analysis investigates geographical patterns in nutrient diversity, relationships with macronutrient diversity and the association between household income and the gap between basket diversity and nutrient diversity.
+Using 2015 Tesco Clubcard purchasing data aggregated at Middle Layer Super Output Area (MSOA) level, the analysis explores geographical differences in nutrient diversity, relationships with macronutrient diversity, and the association between household income and the gap between basket diversity and nutrient diversity.
 
 The analysis combines Tesco Grocery 1.0 data with 2014 ONS Small Area Income Estimates.
 
@@ -28,25 +28,26 @@ The analysis combines Tesco Grocery 1.0 data with 2014 ONS Small Area Income Est
 **ONS Small Area Income Estimates**
 - 2014 net weekly income estimates before housing costs.
 - 7,201 MSOAs across England and Wales, with the London subset used in the analysis.
-- Income estimates based on the OECD equivalisation scale.
+- Income estimates using the OECD equivalisation scale.
 
 ## Methodology
 
-- **Data processing:** Cleaning, transformation and aggregation of purchasing data at MSOA level.
+- **Data processing:** Cleaning, transformation and aggregation of grocery purchasing data at MSOA level.
 - **Nutrient diversity:** Shannon entropy used to measure diversity in nutrient purchasing patterns.
-- **Statistical analysis:** Descriptive analysis, correlation and Ordinary Least Squares (OLS) regression with HC3 robust standard errors.
-- **Geospatial analysis:** MSOA-level comparisons and choropleth mapping to identify geographical patterns.
-- **Income analysis:** Regression analysis examining the relationship between log-transformed income and basket–nutrient diversity divergence.
+- **Statistical analysis:** Descriptive statistics, correlation and OLS regression with HC3 robust standard errors.
+- **Geospatial analysis:** MSOA-level geographical comparisons and choropleth mapping.
+- **Income analysis:** Regression examining the relationship between log-transformed income and basket–nutrient diversity divergence.
+- **Visualisation:** Statistical plots, geographical maps and Power BI.
 
-### Key Findings
+## Key Findings
 
-**1. Geographical inequalities**
+### 1. Geographical inequalities
 
 - Inner London generally demonstrates higher nutrient diversity.
 - Lower-diversity areas cluster in outer East and South London.
 - Bexley, Barking and Dagenham, Havering and Newham are identified as areas with lower average nutrient diversity.
 
-**2. Macronutrient diversity**
+### 2. Macronutrient diversity
 
 The OLS model explains approximately 51% of the variation in nutrient diversity (R² = 0.51).
 
@@ -59,26 +60,28 @@ The OLS model explains approximately 51% of the variation in nutrient diversity 
 
 Protein diversity and average age have positive associations with nutrient diversity, while carbohydrate and sugar diversity have negative associations.
 
-**3. Income and basket–nutrient divergence**
+### 3. Income and basket–nutrient divergence
 
-Basket–nutrient divergence is defined as:
+The analysis defines diversity divergence as:
 
 `Basket Diversity − Nutrient Diversity`
 
-The income regression reports R² = 0.59 and a log-income coefficient of -1.62 (p < 0.001). Lower-income MSOAs show a larger gap between basket diversity and nutrient diversity.
+The income regression reports R² = 0.59 and a log-income coefficient of -1.62 (p < 0.001).
+
+Lower-income MSOAs show a larger gap between basket diversity and nutrient diversity.
 
 ## Assumptions and Limitations
 
 - **Clubcard representation:** Clubcard holders may not represent all grocery shoppers.
 - **Full grocery basket assumption:** Tesco purchases are treated as representative of household grocery purchasing, although purchases from other retailers and markets are not captured.
-- **Nutritional profiles:** Average nutrient profiles are used for food categories, so variation between individual products is not fully represented.
-- **Geographical coverage:** The analysis focuses on London and should not automatically be generalised to other regions.
+- **Average nutrient profiles:** Individual nutritional differences between products within a food category are not fully captured.
+- **Geographical coverage:** Findings are specific to London and should not automatically be generalised nationally.
 - **Temporal mismatch:** 2014 income estimates are compared with 2015 purchasing data.
 - **Outlier treatment:** The income analysis applies asymmetric winsorisation, capping 6.5% of lower values and 1% of upper values.
 
 ## Tools and Technologies
 
-Python | Pandas | NumPy | SciPy | Statsmodels | Matplotlib | Seaborn | GeoPandas | Jupyter Notebook | Power BI
+Python | Pandas | NumPy | SciPy | Statsmodels | Matplotlib | Seaborn | GeoPandas | Power BI | Jupyter Notebook
 
 ## Repository Structure
 
@@ -107,7 +110,7 @@ See [`requirements.txt`](requirements.txt) for the Python dependencies.
 
 The notebook expects the required datasets to be placed in `data/raw/`. Refer to the notebook for the expected filenames and analysis workflow.
 
-The notebook has not yet been verified end-to-end in a clean environment.
+End-to-end execution has not yet been verified in a clean environment.
 
 ## Academic Context
 
