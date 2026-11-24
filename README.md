@@ -123,8 +123,6 @@ End-to-end execution has not yet been verified in a clean environment.
 
 Developed as group coursework for CM52052 Applied Data Science, MSc Data Science, University of Bath.
 
-
-
 ## Project Visualisations
 
 ### 1. Geographical distribution of nutrient diversity
