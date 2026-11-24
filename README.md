@@ -1,43 +1,101 @@
 # Tesco Clubcard: Nutrient Diversity in London
 
-An MSc Data Science project investigating geographical differences in dietary purchasing diversity across London using Tesco grocery purchasing data, statistical analysis and geospatial techniques.
+An MSc Data Science group coursework project investigating geographical inequalities in nutrient diversity across London using Tesco Grocery 1.0 purchasing data, statistical modelling and geospatial analysis.
 
 ## Project Overview
 
-This project examines nutrient diversity in grocery purchasing patterns across London and investigates how geographical and socioeconomic factors relate to differences in purchasing diversity.
+This project examines whether the variety of foods purchased by households reflects nutritional variety, and how purchasing patterns differ across London.
 
-The analysis uses Tesco Grocery 1.0 purchasing data alongside household income estimates and geographical information.
+Using annual Tesco Clubcard purchasing data from 2015, aggregated at Middle Layer Super Output Area (MSOA) level, the analysis investigates geographical patterns in nutrient diversity, relationships with macronutrient diversity and the association between household income and the gap between basket diversity and nutrient diversity.
+
+The analysis combines Tesco Grocery 1.0 data with 2014 ONS Small Area Income Estimates.
 
 ## Research Questions
 
-1. How does nutrient diversity vary across London?
-2. Which geographical areas demonstrate differences in nutrient diversity?
-3. What relationships exist between household income and nutrient diversity?
+1. Where are the geographical gaps in nutrient diversity across London?
+2. How are macronutrient diversity and average age associated with nutrient diversity?
+3. How does household income relate to the difference between basket diversity and nutrient diversity?
+
+## Dataset Overview
+
+**Tesco Grocery 1.0**
+- 983 London MSOAs.
+- More than 420 million purchase records.
+- 17 food categories and over 30 nutrients.
+- 202 variables covering purchasing patterns, demographics and nutritional information.
+- Annual purchasing data for 2015.
+
+**ONS Small Area Income Estimates**
+- 2014 net weekly income estimates before housing costs.
+- 7,201 MSOAs across England and Wales, with the London subset used in the analysis.
+- Income estimates based on the OECD equivalisation scale.
 
 ## Methodology
 
-- **Data processing:** Cleaning, transformation and aggregation of grocery purchasing data.
-- **Nutrient diversity:** Shannon Entropy to measure diversity across nutrient categories.
-- **Statistical analysis:** Descriptive statistics, correlation and OLS regression.
-- **Geospatial analysis:** MSOA-level geographical comparisons and mapping.
-- **Visualisation:** Power BI dashboards and statistical plots.
+- **Data processing:** Cleaning, transformation and aggregation of purchasing data at MSOA level.
+- **Nutrient diversity:** Shannon entropy used to measure diversity in nutrient purchasing patterns.
+- **Statistical analysis:** Descriptive analysis, correlation and Ordinary Least Squares (OLS) regression with HC3 robust standard errors.
+- **Geospatial analysis:** MSOA-level comparisons and choropleth mapping to identify geographical patterns.
+- **Income analysis:** Regression analysis examining the relationship between log-transformed income and basket–nutrient diversity divergence.
+
+### Key Findings
+
+**1. Geographical inequalities**
+
+- Inner London generally demonstrates higher nutrient diversity.
+- Lower-diversity areas cluster in outer East and South London.
+- Bexley, Barking and Dagenham, Havering and Newham are identified as areas with lower average nutrient diversity.
+
+**2. Macronutrient diversity**
+
+The OLS model explains approximately 51% of the variation in nutrient diversity (R² = 0.51).
+
+| Predictor | Coefficient |
+|---|---:|
+| Carbohydrate diversity | -0.058 |
+| Sugar diversity | -0.013 |
+| Protein diversity | +0.025 |
+| Average age | +0.015 |
+
+Protein diversity and average age have positive associations with nutrient diversity, while carbohydrate and sugar diversity have negative associations.
+
+**3. Income and basket–nutrient divergence**
+
+Basket–nutrient divergence is defined as:
+
+`Basket Diversity − Nutrient Diversity`
+
+The income regression reports R² = 0.59 and a log-income coefficient of -1.62 (p < 0.001). Lower-income MSOAs show a larger gap between basket diversity and nutrient diversity.
+
+## Assumptions and Limitations
+
+- **Clubcard representation:** Clubcard holders may not represent all grocery shoppers.
+- **Full grocery basket assumption:** Tesco purchases are treated as representative of household grocery purchasing, although purchases from other retailers and markets are not captured.
+- **Nutritional profiles:** Average nutrient profiles are used for food categories, so variation between individual products is not fully represented.
+- **Geographical coverage:** The analysis focuses on London and should not automatically be generalised to other regions.
+- **Temporal mismatch:** 2014 income estimates are compared with 2015 purchasing data.
+- **Outlier treatment:** The income analysis applies asymmetric winsorisation, capping 6.5% of lower values and 1% of upper values.
 
 ## Tools and Technologies
 
-Python | Pandas | NumPy | Scikit-learn | Matplotlib | Seaborn | GeoPandas | Power BI | Jupyter Notebook
+Python | Pandas | NumPy | SciPy | Statsmodels | Matplotlib | Seaborn | GeoPandas | Jupyter Notebook | Power BI
 
 ## Repository Structure
 
-- `data/` – Dataset sources, documentation and access instructions.
-- `notebooks/` – Jupyter notebooks containing the analysis.
-- `visualisations/` – Project charts, maps and dashboard screenshots.
-- `reports/` – Project documentation and summaries.
-- `requirements.txt` – Python dependencies.
+```text
+tesco-clubcard-nutrient-diversity/
+├── README.md
+├── requirements.txt
+├── data/
+│   └── README.md
+└── notebooks/
+    └── tesco_nutrient_diversity_analysis.ipynb
+```
 
 ## Data Sources
 
 - [Tesco Grocery 1.0 – Figshare](https://figshare.com/collections/Tesco_Grocery_1_0/4769354)
-- [ONS Small Area Income Estimates](https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth)
+- [ONS Small Area Model-Based Income Estimates](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/smallareaincomeestimatesformiddlelayersuperoutputareasenglandandwales)
 
 See [`data/README.md`](data/README.md) for dataset documentation and access information.
 
@@ -45,9 +103,12 @@ Original datasets are not redistributed in this repository.
 
 ## Reproducibility
 
-Instructions for installing dependencies, accessing the required datasets and running the analysis will be provided alongside the notebook.
+See [`requirements.txt`](requirements.txt) for the Python dependencies.
+
+The notebook expects the required datasets to be placed in `data/raw/`. Refer to the notebook for the expected filenames and analysis workflow.
+
+The notebook has not yet been verified end-to-end in a clean environment.
 
 ## Academic Context
 
-Developed as part of the MSc Data Science programme at the University of Bath.
-
+Developed as group coursework for CM52052 Applied Data Science, MSc Data Science, University of Bath.
